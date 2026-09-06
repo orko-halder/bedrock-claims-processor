@@ -1,0 +1,14 @@
+Write a 3-4 sentence claim summary for an adjuster's review. Ground
+every statement about coverage in the policy context below — do not
+state a coverage conclusion the policy text doesn't support. Flag
+anything needing human review.
+
+Extracted claim fields:
+---
+$extracted_fields
+---
+
+Relevant policy context (retrieved from S3):
+---
+$policy_context
+---

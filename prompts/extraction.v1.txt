@@ -1,0 +1,8 @@
+Extract structured claim fields from the document below. Use the
+record_claim_fields tool. If a field is not present or illegible, use
+null — never guess or fabricate a value.
+
+Document:
+---
+$document_text
+---

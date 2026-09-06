@@ -1,0 +1,66 @@
+[
+  {
+    "document": "claim_1_auto_clean.txt",
+    "extraction_model": "sonnet_extraction",
+    "elapsed_seconds": 8.7,
+    "claimant_name": "Marcus Reed",
+    "extraction_valid": true,
+    "extraction_errors": [],
+    "summary_valid": true,
+    "summary_warnings": []
+  },
+  {
+    "document": "claim_1_auto_clean.txt",
+    "extraction_model": "haiku_extraction",
+    "elapsed_seconds": 5.6,
+    "claimant_name": "Marcus Reed",
+    "extraction_valid": true,
+    "extraction_errors": [],
+    "summary_valid": true,
+    "summary_warnings": []
+  },
+  {
+    "document": "claim_2_auto_missing_field.txt",
+    "extraction_model": "sonnet_extraction",
+    "elapsed_seconds": 7.36,
+    "claimant_name": null,
+    "extraction_valid": false,
+    "extraction_errors": [
+      "missing required field: claimant_name"
+    ],
+    "summary_valid": true,
+    "summary_warnings": []
+  },
+  {
+    "document": "claim_2_auto_missing_field.txt",
+    "extraction_model": "haiku_extraction",
+    "elapsed_seconds": 6.04,
+    "claimant_name": null,
+    "extraction_valid": false,
+    "extraction_errors": [
+      "missing required field: claimant_name"
+    ],
+    "summary_valid": true,
+    "summary_warnings": []
+  },
+  {
+    "document": "claim_3_home_water_damage.txt",
+    "extraction_model": "sonnet_extraction",
+    "elapsed_seconds": 7.76,
+    "claimant_name": "Priya Nathan",
+    "extraction_valid": true,
+    "extraction_errors": [],
+    "summary_valid": true,
+    "summary_warnings": []
+  },
+  {
+    "document": "claim_3_home_water_damage.txt",
+    "extraction_model": "haiku_extraction",
+    "elapsed_seconds": 6.14,
+    "claimant_name": "Priya Nathan",
+    "extraction_valid": true,
+    "extraction_errors": [],
+    "summary_valid": true,
+    "summary_warnings": []
+  }
+]

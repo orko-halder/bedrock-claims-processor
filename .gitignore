@@ -1,0 +1,18 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Local secrets / environment
+.env
+.env.*
+
+# OS / editor cruft
+.DS_Store
+.idea/
+.vscode/
