@@ -86,3 +86,54 @@ depth matters more than raw speed.
 - **Only one extraction schema was tested** — a more complex claim
   type (e.g. more fields, nested structures) might show a bigger gap
   between models than this relatively simple 7-field schema does.
+
+# Step 5 — how you score matters more than which model you pick
+
+The step-4 comparison scored the *extraction* step, where fields are
+exact strings and lexical matching is fine. Scoring the *summary* step —
+free text, where a correct answer can be phrased many ways — is where the
+choice of metric bites. `tests/eval_scoring.py` scores each generated
+summary against a reference answer (`tests/ground_truth.json`) two ways:
+
+- **word_overlap** — token Jaccard against the reference. The naive metric
+  a quick script reaches for.
+- **llm_judge** — a second model (Sonnet) rates factual accuracy 1–5,
+  explicitly told to ignore wording.
+
+Extraction was held constant on Sonnet; only the summary model was swapped
+(Sonnet vs. Haiku), so the summary is the only variable.
+
+## Results (live)
+
+| Document | word-overlap (Sonnet / Haiku) | overlap "winner" | judge 1–5 (Sonnet / Haiku) | judge verdict |
+|---|---|---|---|---|
+| claim_1 | 0.451 / 0.396 | Sonnet | 5 / 5 | tie |
+| claim_2 | 0.371 / 0.404 | Haiku  | 4 / 4 | tie |
+| claim_3 | 0.511 / 0.505 | Sonnet | 5 / 5 | tie |
+
+## Finding
+
+**Word overlap named a winner on all three documents; the judge found none.**
+The overlap margins (0.005–0.055) are phrasing noise, not accuracy — both
+summaries were rated factually equivalent on every document. Tellingly,
+both models dropped to a judge score of 4 on `claim_2` for the *same*
+reason (each omitted the fact that the claimant name is illegible and must
+be obtained), which is evidence the judge is tracking factual content
+rather than wording. A team that trusted the lexical metric would "prefer"
+a model that is no more correct — the metric manufactures a ranking the
+task doesn't support.
+
+Practical takeaway: use exact/lexical matching only where the correct
+output is genuinely fixed (e.g. extracted field values), and use
+task-aware judging for free-text outputs.
+
+## Limitations of this eval
+
+- **The judge is Sonnet grading both its own and Haiku's output**, so it
+  could favor its own phrasing (self-preference bias) — yet it still rated
+  them tied, if anything understating the point.
+- **3 documents, one reference answer each** — directional, not
+  conclusive; a larger set with adversarial paraphrases would test the gap
+  between the two metrics more strongly.
+- **Single judge model, no human adjudication** — a production eval would
+  calibrate the judge against human ratings before trusting it.

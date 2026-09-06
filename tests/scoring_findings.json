@@ -1,0 +1,50 @@
+[
+  {
+    "document": "claim_1_auto_clean.txt",
+    "summary_model": "sonnet",
+    "word_overlap": 0.451,
+    "judge_score": 5,
+    "judge_rationale": "All reference facts are accurately represented: the rear-end collision details, damage description, repair cost ($3,240.00), collision coverage applicability, $500 deductible, and the critical need to confirm rideshare usage before approval are all correctly stated with no contradictions.",
+    "summary": "**Claim Summary \u2013 CLM-88213**\n\nClaimant Marcus Reed reported rear-end collision damage (bumper and trunk) occurring on 2026-07-14, with a claimed amount of $3,240.00. Policy POL-1001 provides collision coverage for damage from impact with another vehicle, subject to a $500 deductible. **Human review required:** The policy excludes damage during rideshare use unless a rideshare endorsement is active\u2014claim form does not indicate whether the vehicle was being used for rideshare purposes at the time of loss, and endorsement status is not confirmed in the retrieved policy context."
+  },
+  {
+    "document": "claim_1_auto_clean.txt",
+    "summary_model": "haiku",
+    "word_overlap": 0.396,
+    "judge_score": 5,
+    "judge_rationale": "All reference facts are accurately represented: claim number, claimant name, rear-end collision, damage type, no injuries, repair cost $3,240, collision coverage applicability, $500 deductible, and the need to confirm rideshare usage before approval are all correct with no contradictions.",
+    "summary": "**Claim Summary \u2013 CLM-88213**\n\nMarcus Reed reported a rear-end collision on Route 9 on July 14, 2026, resulting in rear bumper and trunk damage with no injuries; claimed amount is $3,240. The policy provides collision coverage for impact with another vehicle subject to a $500 deductible, which would apply to this loss if the vehicle was not being used for rideshare purposes at the time. **Human review required:** Confirm whether the vehicle was being used for rideshare at the time of loss, and verify whether a rideshare endorsement is active on POL-1001, as these factors affect coverage eligibility."
+  },
+  {
+    "document": "claim_2_auto_missing_field.txt",
+    "summary_model": "sonnet",
+    "word_overlap": 0.371,
+    "judge_score": 4,
+    "judge_rationale": "The summary accurately captures the damage details, repair cost, rideshare exclusion, and need to verify the endorsement, but it omits the critical fact that the claimant name is illegible and must be obtained before processing.",
+    "summary": "**Claim Summary \u2013 CLM-88240**\n\nThe insured's vehicle sustained front-left panel and headlight damage from a collision with a parked car on August 2, 2026, with reported damages of $1,875.50. The policy provides collision coverage for impact with another vehicle subject to a $500 deductible; however, the policy excludes damage occurring while the vehicle was used for rideshare purposes unless the rideshare endorsement is active. **REQUIRES HUMAN REVIEW:** Verify whether a rideshare endorsement exists on policy POL-1001, as the incident occurred during a rideshare pickup and coverage may be excluded without this endorsement."
+  },
+  {
+    "document": "claim_2_auto_missing_field.txt",
+    "summary_model": "haiku",
+    "word_overlap": 0.404,
+    "judge_score": 4,
+    "judge_rationale": "The summary correctly captures the collision details, damage, repair cost, rideshare use, and coverage exclusion/endorsement issue, but omits the critical fact that the claimant name is illegible and must be obtained before processing.",
+    "summary": "**CLAIM SUMMARY \u2013 CLM-88240**\n\nClaimant reported a collision on 2026-08-02 involving front-left panel and headlight damage while the vehicle was used for a rideshare pickup. The claim amount is $1,875.50. **[HUMAN REVIEW REQUIRED]** The policy excludes collision coverage for rideshare-related damage unless a rideshare endorsement is active; the retrieved policy context does not confirm whether such an endorsement is in effect on POL-1001. If the endorsement is active, collision coverage would apply subject to the $500 deductible; if not active, the claim would be excluded."
+  },
+  {
+    "document": "claim_3_home_water_damage.txt",
+    "summary_model": "sonnet",
+    "word_overlap": 0.511,
+    "judge_score": 5,
+    "judge_rationale": "All reference facts are accurately presented: correct claim/policy numbers, claimant name, incident description (burst supply line under kitchen sink overnight), damage scope (kitchen flooring and cabinetry), repair cost ($6,420), dwelling coverage for sudden plumbing failures, $1,000 deductible, and the critical need to confirm sudden versus gradual failure determination before coverage applies.",
+    "summary": "**Claim Summary \u2013 CLM-91007**\n\nClaimant Priya Nathan reports a burst supply line under the kitchen sink on June 30, 2026, resulting in water damage to kitchen flooring and cabinetry totaling $6,420. Policy POL-2044 provides dwelling coverage for sudden plumbing failures subject to a $1,000 deductible, which may apply if the burst qualifies as sudden rather than gradual damage from lack of maintenance. **Human review needed** to determine whether the supply line failure was sudden (covered) or resulted from gradual deterioration/poor maintenance (excluded), and to verify the scope and valuation of the claimed damages."
+  },
+  {
+    "document": "claim_3_home_water_damage.txt",
+    "summary_model": "haiku",
+    "word_overlap": 0.505,
+    "judge_score": 5,
+    "judge_rationale": "All reference facts are accurately represented: the claim number, policy number, claimant name, incident description (burst supply line under kitchen sink), damage location (kitchen flooring and cabinetry), repair cost ($6,420.00), applicable dwelling coverage for sudden plumbing failures, $1,000 deductible, and the critical need to confirm sudden versus gradual failure due to the gradual water damage exclusion.",
+    "summary": "**CLAIM SUMMARY \u2013 CLM-91007**\n\nClaimant Priya Nathan filed a claim for $6,420.00 in water damage to kitchen flooring and cabinetry resulting from a burst supply line under the kitchen sink on June 30, 2026. The policy provides dwelling coverage for structural damage from \"sudden plumbing failures\" subject to a $1,000 deductible, which may apply to this loss if the burst is determined to be sudden rather than gradual. **HUMAN REVIEW REQUIRED:** Adjuster must investigate whether the supply line failure was sudden or resulted from gradual deterioration/lack of maintenance, as the policy excludes gradual water damage from lack of maintenance."
+  }
+]

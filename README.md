@@ -54,9 +54,12 @@ python main.py sample_data/claim_1_auto_clean.txt
 ## Test and evaluate
 
 ```bash
-python tests/evaluate.py
+python tests/evaluate.py       # Sonnet vs. Haiku on extraction (correctness + latency)
+python tests/eval_scoring.py    # word-overlap vs. LLM-as-judge on the summary step
 ```
-Compares Claude Sonnet vs. Haiku on extraction across 3 sample documents. See `tests/FINDINGS.md` for real results — Haiku matched Sonnet's correctness (including correctly returning `null` on an illegible field) while running 20–30% faster.
+`evaluate.py` compares Claude Sonnet vs. Haiku on extraction across 3 sample documents — Haiku matched Sonnet's correctness (including correctly returning `null` on an illegible field) while running 20–30% faster.
+
+`eval_scoring.py` scores the summary step with a naive word-overlap metric and an LLM-as-judge, and shows they disagree: word overlap declares a "winner" on every document off phrasing noise, while the judge rates the models factually equivalent. See `FINDINGS.md` for the full results and how you score mattering more than which model you pick.
 
 ## Gotchas I hit building this (real, not hypothetical)
 
