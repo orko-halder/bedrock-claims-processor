@@ -13,7 +13,12 @@ import os
 
 AWS_REGION = os.environ.get("AWS_REGION", "us-east-1")
 
-S3_BUCKET = os.environ.get("CLAIMS_BUCKET", "your-claims-bucket")
+S3_BUCKET = os.environ.get("CLAIMS_BUCKET")
+if not S3_BUCKET:
+    raise RuntimeError(
+        "Set the CLAIMS_BUCKET environment variable to your S3 bucket name "
+        "(see .env.example)."
+    )
 S3_RAW_PREFIX = "raw/"
 S3_POLICY_PREFIX = "policies/"
 

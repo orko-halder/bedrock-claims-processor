@@ -43,8 +43,8 @@ Set `CLAIMS_BUCKET` in `config.py` or as an environment variable to match.
 
 ## Run
 
-Point the pipeline at your bucket (the code reads `CLAIMS_BUCKET`; the
-default in `config.py` is a placeholder):
+Point the pipeline at your bucket. `CLAIMS_BUCKET` is required — the app
+fails fast if it's unset (see `.env.example` for the full list of vars):
 
 ```bash
 export CLAIMS_BUCKET=your-bucket-name
